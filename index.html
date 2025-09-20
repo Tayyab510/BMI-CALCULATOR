@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <header class="header">
+                <h1>BMI Calculator</h1>
+                <p class="subtitle">Calculate your Body Mass Index</p>
+            </header>
+            
+            <form class="calculator-form" id="bmiForm">
+                <div class="input-group">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" name="height" placeholder="Enter your height" min="50" max="300" required>
+                    <span class="error-message" id="heightError"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" name="weight" placeholder="Enter your weight" min="10" max="500" step="0.1" required>
+                    <span class="error-message" id="weightError"></span>
+                </div>
+                
+                <button type="submit" class="calculate-btn">Calculate BMI</button>
+            </form>
+            
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="bmi-display">
+                    <h2>Your BMI</h2>
+                    <div class="bmi-value" id="bmiValue">0.0</div>
+                </div>
+                
+                <div class="bmi-category" id="bmiCategory">
+                    <div class="category-text" id="categoryText">Category</div>
+                    <div class="category-description" id="categoryDescription">Description</div>
+                </div>
+                
+                <div class="bmi-chart">
+                    <h3>BMI Categories</h3>
+                    <div class="chart">
+                        <div class="chart-bar underweight">
+                            <span class="range">Underweight</span>
+                            <span class="values">&lt; 18.5</span>
+                        </div>
+                        <div class="chart-bar normal">
+                            <span class="range">Normal weight</span>
+                            <span class="values">18.5 - 24.9</span>
+                        </div>
+                        <div class="chart-bar overweight">
+                            <span class="range">Overweight</span>
+                            <span class="values">25.0 - 29.9</span>
+                        </div>
+                        <div class="chart-bar obese">
+                            <span class="range">Obese</span>
+                            <span class="values">≥ 30.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="reset-btn" id="resetBtn">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
